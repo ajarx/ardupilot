@@ -21,7 +21,7 @@
 #include "AP_Proximity_Backend_Serial.h"
 
 
-#define LDROBOT_TIMEOUT_MS              500000    // Driver will report "unhealthy" if valid sensor readings not received within this many ms
+#define LDROBOT_TIMEOUT_MS              1000    // Driver will report "unhealthy" if valid sensor readings not received within this many ms
 #define LDROBOT_INIT_TIMEOUT_MS         1000   // Timeout this many ms after init
 #define LDROBOT_MAX_RANGE_M             25.0f   // max range of the sensor in meters
 #define LDROBOT_MIN_RANGE_M             0.1f   // min range of the sensor in meters
