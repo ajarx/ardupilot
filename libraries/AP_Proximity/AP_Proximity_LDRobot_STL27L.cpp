@@ -84,7 +84,7 @@ void AP_Proximity_LDLidar_STL27L::update()
     } else {
         // long time since we received any valid sensor data
         // try sending the sensor the "send data" message
-        //_initialized = false;
+        _initialized = false;
         set_status(AP_Proximity::Status::NoData);
         Debug(1, "LDLidar NO DATA");
     }
