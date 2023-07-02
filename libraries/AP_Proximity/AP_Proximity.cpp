@@ -26,6 +26,7 @@
 #include "AP_Proximity_SITL.h"
 #include "AP_Proximity_AirSimSITL.h"
 #include "AP_Proximity_Cygbot_D1.h"
+#include "AP_Proximity_LDRobot_STL27L.h"
 
 #include <AP_Logger/AP_Logger.h>
 
@@ -185,6 +186,13 @@ void AP_Proximity::init()
             drivers[instance] = new AP_Proximity_AirSimSITL(*this, state[instance], params[instance]);
             break;
 #endif
+        case Type::LDLidarSTL27L:
+            if (AP_Proximity_LDLidar_STL27L::detect(serial_instance)) {
+                state[instance].instance = instance;
+                drivers[instance] = new AP_Proximity_LDLidar_STL27L(*this, state[instance], params[instance], serial_instance);
+                serial_instance++;
+            }
+            break;
         }
 
         if (drivers[instance] != nullptr) {
