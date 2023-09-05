@@ -84,6 +84,9 @@ public:
 #if AP_PROXIMITY_SCRIPTING_ENABLED
         Scripting = 15,
 #endif
+#if AP_PROXIMITY_LDROBOT_STL27L_ENABLED
+        LDLidarSTL27L = 16,
+#endif
     };
 
     enum class Status {
